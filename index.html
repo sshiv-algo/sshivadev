@@ -3,110 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Portfolio Website</title>
     <style>
         body {
-            background-color: black;
-            color: white;
-            font-family: 'poppins', sans-serif;
             margin: 0;
             padding: 0;
-        }
-        header, footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-        }
-        header h1, footer p {
+            font-family: Arial, sans-serif;
+            background-color: black;
             color: white;
+            display: flex;
+        }
+        nav {
+            width: 200px;
+            background-color: red;
+            height: 100vh;
+            padding-top: 20px;
+            position: fixed;
         }
         nav ul {
-            text-align:center
-            list-style: none;
+            list-style-type: none;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            background-color: #000;
+            margin: 0;
         }
         nav ul li {
-            margin: 0 15px;
+            margin: 20px 0;
         }
         nav ul li a {
             text-decoration: none;
-            color: orange;
+            color: white;
+            font-size: 18px;
             font-weight: bold;
+            display: block;
+            text-align: center;
+        }
+        main {
+            margin-left: 200px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
         }
         section {
-            padding: 50px;
-            text-align: right;
-        }
-        section h2 {
-            color: orange;
-            margin-bottom: 20px;
-        }
-        section p {
-            color: white;
-        }
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .project {
-            background-color: #222;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
-            color: white;
+            margin-bottom: 50px;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Portfolio</h1>
-</header>
-
 <nav>
     <ul>
-        <li><a href="#Home">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#works">Works</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
 <main>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+    </header>
+
     <section id="home">
-        <h2>Shivadev</h2>
-        <p>Welcome to my portfolio! Here you can find more about my work and projects.</p>
+        <h2>Home</h2>
+        <p>This is the home section of the portfolio.</p>
     </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects">
-            <div class="project">
-                <h3>Project 1</h3>
-                <p>A brief description of Project 1.</p>
-            </div>
-            <div class="project">
-                <h3>Project 2</h3>
-                <p>A brief description of Project 2.</p>
-            </div>
-            <!-- Add more projects as needed -->
-        </div>
+    <section id="about">
+        <h2>About</h2>
+        <p>Details about me and my background.</p>
+    </section>
+
+    <section id="works">
+        <h2>Works</h2>
+        <p>Some of the projects and works I have done.</p>
     </section>
 
     <section id="contact">
         <h2>Contact</h2>
-        <p>If you'd like to get in touch, feel free to reach out via <a href="mailto:your-email@example.com" style="color: orange;">email</a>.</p>
+        <p>Contact information or form.</p>
     </section>
 </main>
 
-<footer>
-    <p>&copy; 2025 My Portfolio</p>
-</footer>
-
 </body>
 </html>
+
 
