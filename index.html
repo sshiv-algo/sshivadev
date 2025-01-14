@@ -5,27 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website</title>
     <style>
-        body {
+        body, html {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            height: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        body {
             background-color: black;
             color: white;
-            text-align: center;
         }
         nav {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
             background-color: red;
-            padding: 15px 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 1000;
         }
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
-            display: inline-block;
+            display: inline-flex;
         }
         nav ul li {
-            display: inline;
-            margin: 0 20px;
+            margin: 0 15px;
         }
         nav ul li a {
             text-decoration: none;
@@ -37,22 +47,33 @@
         nav ul li a:hover {
             color: #ffcc00; /* Gold color on hover */
         }
-        main {
-            padding: 50px 20px;
-        }
-        header {
-            margin-bottom: 50px;
-        }
         section {
-            margin-bottom: 50px;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        #home {
+            background-color: black;
+        }
+        #about {
+            background-color: #1a1a1a;
+        }
+        #works {
+            background-color: #333;
+        }
+        #contact {
+            background-color: #4d4d4d;
+        }
+        h1, h2 {
+            color: white;
         }
         footer {
             background-color: #222;
             padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            left: 0;
+            text-align: center;
             color: white;
         }
     </style>
@@ -68,31 +89,24 @@
     </ul>
 </nav>
 
-<main>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-    </header>
+<section id="home">
+    <h1>Welcome to My Portfolio</h1>
+</section>
 
-    <section id="home">
-        <h2>Home</h2>
-        <p>This is the home section of the portfolio.</p>
-    </section>
+<section id="about">
+    <h2>About Me</h2>
+    <p>Details about me and my background.</p>
+</section>
 
-    <section id="about">
-        <h2>About</h2>
-        <p>Details about me and my background.</p>
-    </section>
+<section id="works">
+    <h2>Works</h2>
+    <p>Some of the projects and works I have done.</p>
+</section>
 
-    <section id="works">
-        <h2>Works</h2>
-        <p>Some of the projects and works I have done.</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Contact information or form.</p>
-    </section>
-</main>
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Contact information or form.</p>
+</section>
 
 <footer>
     <p>&copy; 2025 My Portfolio</p>
@@ -100,3 +114,4 @@
 
 </body>
 </html>
+
