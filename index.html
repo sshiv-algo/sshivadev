@@ -1,117 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            height: 100%;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-        body {
-            background-color: black;
-            color: white;
-        }
-        nav {
-            position: fixed;
-            top: 0;
-            left: 80%;
-            transform: translateX(-50%);
-            width: 100%;
-            text-align: center;
-            padding: 10px 0;
-            z-index: 1000;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: inline-flex;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-        nav ul li a:hover {
-            color: red; /hover
-        }
-        section {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
-        #home {
-            background-color: black;
-        }
-        #about {
-            background-color: #1a1a1a;
-        }
-        #works {
-            background-color: #333;
-        }
-        #contact {
-            background-color: #4d4d4d;
-        }
-        h1, h2 {
-            color: white;
-        }
-        footer {
-            background-color: #222;
-            padding: 10px;
-            text-align: center;
-            color: white;
-        }
-    </style>
-</head>
-<body>
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
-<nav>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#works">Works</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+export default function Proposal() {
+  const [yesClicked, setYesClicked] = useState(false);
+  const [noPosition, setNoPosition] = useState({ x: 0, y: 0 });
 
-<section id="home">
-    <h1>Welcome</h1>
-</section>
+  const handleNoHover = () => {
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 200 - 100;
+    setNoPosition({ x, y });
+  };
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>Details about me and my background.</p>
-</section>
-
-<section id="works">
-    <h2>Works</h2>
-    <p>Some of the projects and works I have done.</p>
-</section>
-
-<section id="contact">
-    <h2>Contact</h2>
-<p>Feel free to reach out to me at <a href="mailto:ssh.shivadev@protonmail.com">ssh.shivadev@protonmail.com</a>.</p>
-
-</section>
-
-<footer>
-    <p>&copy; 2025 My Portfolio</p>
-</footer>
-
-</body>
-</html>
-
+  return (
+    <div className="flex items-center justify-center min-h-screen bg-pink-200 text-center">
+      {!yesClicked ? (
+        <div className="p-6 bg-white shadow-xl rounded-2xl">
+          <h1 className="text-3xl font-bold text-pink-600">Will you marry me? 💍</h1>
+          <div className="mt-6 flex justify-center space-x-4 relative">
+            <Button
+              className="bg-pink-500 text-white px-6 py-3 rounded-lg shadow-lg"
+              onClick={() => setYesClicked(true)}
+            >
+              Yes ❤️
+            </Button>
+            <motion.button
+              className="bg-gray-400 text-white px-6 py-3 rounded-lg shadow-lg"
+              onMouseEnter={handleNoHover}
+              style={{ transform: `translate(${noPosition.x}px, ${noPosition.y}px)` }}
+            >
+              No 💔
+            </motion.button>
+          </div>
+        </div>
+      ) : (
+        <div className="p-6 bg-white shadow-xl rounded-2xl">
+          <h1 className="text-3xl font-bold text-pink-600">Yay! I love you! ❤️🥰</h1>
+          <p className="mt-4 text-gray-600">Let's start our forever together! 💑</p>
+        </div>
+      )}
+    </div>
+  );
+}
