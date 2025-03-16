@@ -1,44 +1,22 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-
-export default function Proposal() {
-  const [yesClicked, setYesClicked] = useState(false);
-  const [noPosition, setNoPosition] = useState({ x: 0, y: 0 });
-
-  const handleNoHover = () => {
-    const x = Math.random() * 200 - 100;
-    const y = Math.random() * 200 - 100;
-    setNoPosition({ x, y });
-  };
-
-  return (
-    <div className="flex items-center justify-center min-h-screen bg-pink-200 text-center">
-      {!yesClicked ? (
-        <div className="p-6 bg-white shadow-xl rounded-2xl">
-          <h1 className="text-3xl font-bold text-pink-600">Will you marry me? 💍</h1>
-          <div className="mt-6 flex justify-center space-x-4 relative">
-            <Button
-              className="bg-pink-500 text-white px-6 py-3 rounded-lg shadow-lg"
-              onClick={() => setYesClicked(true)}
-            >
-              Yes ❤️
-            </Button>
-            <motion.button
-              className="bg-gray-400 text-white px-6 py-3 rounded-lg shadow-lg"
-              onMouseEnter={handleNoHover}
-              style={{ transform: `translate(${noPosition.x}px, ${noPosition.y}px)` }}
-            >
-              No 💔
-            </motion.button>
-          </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Marry Me?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="proposal-box">
+            <h1>Will You Marry Me? 💍</h1>
+            <div class="buttons">
+                <button class="yes-btn" onclick="showLoveMessage()">Yes ❤️</button>
+                <button class="no-btn" onmouseover="moveNoButton()">No 💔</button>
+            </div>
         </div>
-      ) : (
-        <div className="p-6 bg-white shadow-xl rounded-2xl">
-          <h1 className="text-3xl font-bold text-pink-600">Yay! I love you! ❤️🥰</h1>
-          <p className="mt-4 text-gray-600">Let's start our forever together! 💑</p>
-        </div>
-      )}
     </div>
-  );
-}
+    
+    <script src="script.js"></script>
+</body>
+</html>
