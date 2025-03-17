@@ -164,6 +164,7 @@ section h1, section h2 {
 
 .contact-form input,
 .contact-form textarea {
+    height: 140%
     width: 100%;
     padding: 10px;
     border: 2px solid #ccc;
