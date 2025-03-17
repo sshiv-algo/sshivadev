@@ -16,13 +16,24 @@ body {
 nav {
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0; /* Align the nav to the left side */
     width: 100%;
     background-color: #000000;
     padding: 15px 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* Align logo to the left and nav items to the right */
+    align-items: center;
 }
 
+/* Logo styles */
+nav .logo img {
+    height: 40px;  /* Set the logo size (adjust as needed) */
+    width: auto;   /* Maintain aspect ratio */
+    margin-left: 20px;  /* Optional: Add space to the left of the logo */
+}
+
+/* Navigation menu */
 nav ul {
     list-style-type: none;
     display: flex;
@@ -66,12 +77,12 @@ section h1, section h2 {
 
 /* Home section styles (changed h1 size and font) */
 #home h1 {
-    font-size: 3rem;  /* Adjust the size of the text */
-    font-family: 'Arial', sans-serif;  /* Set the font family */
-    font-weight: bold;  /* Make the text bold */
-    color: #fff;  /* Color for dark background */
-    text-align: center;  /* Center-align the text */
-    margin-bottom: 20px;  /* Add space below the heading */
+    font-size: 3rem;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* Section-specific backgrounds */
@@ -110,21 +121,21 @@ html {
 
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
-    width: 10px;  /* Vertical scrollbar width */
-    height: 10px;  /* Horizontal scrollbar height */
+    width: 10px;
+    height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #2a2a2a;  /* Dark track to blend with theme */
+    background-color: #2a2a2a;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #444;  /* Dark gray thumb */
-    border-radius: 5px;  /* Rounded corners */
+    background-color: #444;
+    border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #666;  /* Lighter gray on hover */
+    background-color: #666;
 }
 
 /* Styling for mobile responsiveness */
@@ -142,4 +153,3 @@ html {
         padding: 80px 10px;
     }
 }
-
