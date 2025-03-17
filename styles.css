@@ -75,45 +75,30 @@ section h1, section h2 {
     margin-bottom: 20px;
 }
 
-/* Home section styles */
-#home h1 {
-    font-size: 3rem;
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Section-specific backgrounds */
-#home {
-    background-color: #0A0A0A;
-    color: white;
-}
-
-#about {
-    background-color: #171717;
-    color: white;
-}
-
-#experience {
-    background-color: #262626;
-    color: white;
-}
-
-#skills {
-    background-color: #373737;
-    color: white;
-}
-
+/* Contact Section */
 #contact {
     background-color: #525252;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
 }
 
-/* ===== Social Media Icons in Contact Section ===== */
+/* Left Side: Social Media Icons */
+.contact-left {
+    text-align: center;
+    flex: 1;
+}
+
+.contact-left h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
 .social-links {
     display: flex;
+    justify-content: center;
     gap: 20px;
     margin-top: 20px;
 }
@@ -130,12 +115,72 @@ section h1, section h2 {
 .social-icon {
     width: 40px;
     height: 40px;
-    border-radius: 50%; /* Makes the icon circular */
+    border-radius: 50%;
     transition: opacity 0.3s ease;
 }
 
 .social-icon:hover {
     opacity: 0.8;
+}
+
+/* Right Side: Contact Form */
+.contact-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #cc5500;
+}
+
+/* Email Display Box */
+.email-box {
+    width: fit-content;
+    background: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.email-box a {
+    color: white;
+    text-decoration: none;
+}
+
+.email-box a:hover {
+    text-decoration: underline;
 }
 
 /* Smooth scrolling */
@@ -180,8 +225,18 @@ html {
         padding: 80px 10px;
     }
 
+    .contact-left, .contact-right {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
     .social-links {
         flex-direction: column;
         gap: 15px;
+    }
+
+    #contact {
+        flex-direction: column;
+        align-items: center;
     }
 }
