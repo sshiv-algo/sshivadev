@@ -148,7 +148,7 @@ section h1, section h2 {
 
 /* Right Side: Contact Form */
 .contact-right {
-    width: 50%; /* Takes up half the space */
+    width: 80%; /* Takes up half the space */
     text-align: right; /* Ensures form aligns to the right */
     display: flex;
     justify-content: flex-end;
