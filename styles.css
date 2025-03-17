@@ -106,170 +106,102 @@ section h1, section h2 {
     color: white;
 }
 
-/* Contact Section */
-#contact {
-    display: flex;
-    justify-content: space-between; /* Ensures left & right alignment */
-    align-items: center; /* Align items vertically */
-    padding: 50px;
-    background: #565656;
-    min-height: 100vh; /* Adjusts to viewport height */
-    width: 100%;
-}
-
-/* Left Side: Social Media Links */
-.contact-left {
-    width: 50%; /* Takes up half the space */
-    text-align: left; /* Aligns content to the left */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.contact-left h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.social-links {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icon {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.social-icon:hover {
-    transform: scale(1.2);
-}
-
-/* Right Side: Contact Form */
-.contact-right {
-    width: 80%; /* Takes up half the space */
-    text-align: right; /* Ensures form aligns to the right */
-    display: flex;
-    justify-content: flex-end;
-}
-
-.contact-form {
-    width: 100%;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.contact-form button {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-    border-radius: 5px;
-}
-
-.contact-form button:hover {
-    background-color: #0056b3;
-}
-
-/* Email at Bottom */
-.email-box {
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 20px 0;
-    background: #444;
-}
-
-.email-box a {
-    text-decoration: none;
-    color: white;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    #contact {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
-
-    .contact-left, .contact-right {
-        width: 100%;
-        text-align: center;
-        justify-content: center;
-    }
-
-    .social-links {
-        justify-content: left;
-    }
-
-    .contact-right {
-        justify-content: center;
-        margin-top: 20px;
-    }
+#contacts {
+  height: 60vh;
+  width: 100%;
+  display: block;
 }
 
 
-/* Smooth scrolling */
-html {
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    height: 100%;
-    overflow-y: scroll;
+.inputs {
+  height: 100%;
+  width: 50%;
+  margin-left: 3%;
+  margin-top: 5%;
 }
 
-/* Custom scrollbar styles */
-::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+.social {
+  height: 100%;
+  width: 50%;
+  margin-top: 100%;
+}
+.contact-input{
+  display: block;
+  height: 40px;
+  width: 350px;
+  margin: 5%;
+  padding-left: 10px;
+  font-size: 1.1em;
+  background-color: rgba(235, 9, 9, 0.247);
+
+}
+.contact-header{
+  font-size: 1.4em;
+  position: relative;
+  top: 5px;
+  left: 25px;
+  display:block;
+}
+.inputs textarea{
+  height: 140px;
+  display: block;
+}
+.inputs button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 120px;
+  outline: 0;
+  background-color: rgba(235, 9, 9, 0.247);
+  border: 0;
+  margin-left: 4.5%;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  display: block;
+}
+.inputs button:hover{
+  width: 305px;
+  margin-left: 2.5%;
+  background-color: rgba(235, 9, 9, 0.363);
+
+}
+.social{
+  margin-top: -30%;
+}
+.social-header {
+  position:relative;
+  left: 0%;
+  bottom: 520px;
+  font-size: 1.2em;
+  margin-top: 0px;
+  text-align: center;
+
+}
+.social-outer-header {
+  opacity: 0.2;
+  margin-left: 0px;
+  width: 100vw;
 }
 
-::-webkit-scrollbar-track {
-    background-color: #2a2a2a;
+.social-inner-header {
+  color: rgb(228, 12, 12);
+  font-size: 1em;
+  font-weight: 600;
+  position: relative;
+  bottom: 30px;
+  left: 105px;
+
 }
 
-::-webkit-scrollbar-thumb {
-    background-color: #444;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #666;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        margin-top: 60px;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    section {
-        padding: 80px 10px;
-    }
-
-    .social-links {
-        flex-direction: column;
-        gap: 15px;
-    }
+.social a{
+  display: block;
+  height: 50px;
+  width: 50px;
+  margin-left: -130px;
+  margin-top: 120px;
+  font-size: 0.4em;
+  text-align: center;
+  padding-top: 8px;
 }
