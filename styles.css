@@ -109,8 +109,8 @@ section h1, section h2 {
 /* Contact Section */
 #contact {
     display: flex;
-    justify-content: space-between; /* Left & Right alignment */
-    align-items: flex-start; /* Aligns items at the top */
+    justify-content: space-between; /* Ensures left & right alignment */
+    align-items: center; /* Align items vertically */
     padding: 50px;
     background: #565656;
     min-height: 100vh; /* Adjusts to viewport height */
@@ -119,8 +119,8 @@ section h1, section h2 {
 
 /* Left Side: Social Media Links */
 .contact-left {
-    flex: 1;
-    text-align: left; /* Ensures content aligns to the left */
+    width: 50%; /* Takes up half the space */
+    text-align: left; /* Aligns content to the left */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -148,10 +148,10 @@ section h1, section h2 {
 
 /* Right Side: Contact Form */
 .contact-right {
-    flex: 1;
+    width: 50%; /* Takes up half the space */
+    text-align: right; /* Ensures form aligns to the right */
     display: flex;
-    justify-content: flex-end; /* Pushes form to the right */
-    text-align: right;
+    justify-content: flex-end;
 }
 
 .contact-form {
@@ -210,9 +210,9 @@ section h1, section h2 {
     }
 
     .contact-left, .contact-right {
+        width: 100%;
         text-align: center;
         justify-content: center;
-        width: 100%;
     }
 
     .social-links {
