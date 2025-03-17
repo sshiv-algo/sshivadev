@@ -14,7 +14,7 @@ body {
 
 /* Navigation bar */
 nav {
-    text-align: right
+    text-align: right;
     position: fixed;
     top: 0;
     left: 0;
