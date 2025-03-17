@@ -41,24 +41,38 @@
         <p>This is the skills section.</p>
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-         <p>Let's connect on social media!</p>
-    
-    <div class="social-links">
-        <a href="https://www.instagram.com/your_username" target="_blank">
-            <img src="images/instagram.png" alt="Instagram" class="social-icon">
-        </a>
-        
-        <a href="https://www.linkedin.com/in/your_username" target="_blank">
-            <img src="images/linkedin.png" alt="LinkedIn" class="social-icon">
-        </a>
+   <section id="contact">
+    <!-- Left Side: Social Media Links -->
+    <div class="contact-left">
+        <h2>Reach Me On</h2>
+        <div class="social-links">
+            <a href="https://www.instagram.com/your_username" target="_blank">
+                <img src="images/instagram.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/in/your_username" target="_blank">
+                <img src="images/linkedin.png" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://github.com/your_username" target="_blank">
+                <img src="images/github.png" alt="GitHub" class="social-icon">
+            </a>
+        </div>
 
-        <a href="https://github.com/your_username" target="_blank">
-            <img src="images/github.png" alt="GitHub" class="social-icon">
-        </a>
+        <!-- Email Box -->
+        <div class="email-box">
+            <a href="mailto:your.email@example.com">your.email@example.com</a>
+        </div>
     </div>
-    </section>
+
+    <!-- Right Side: Contact Form -->
+    <div class="contact-right">
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
 
     <script src="script.js"></script>
 </body>
