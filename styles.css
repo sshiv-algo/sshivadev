@@ -71,23 +71,23 @@ section h1, section h2 {
 }
 
 #about {
-    background-color: #98FB98;
-    color: #333;
+    background-color: #171717;
+    color: white;
 }
 
 #experience {
-    background-color: #FFCCCB;
-    color: #333;
+    background-color: #262626;
+    color: white;
 }
 
 #skills {
-    background-color: #FFD700;
-    color: #333;
+    background-color: #373737;
+    color: white;
 }
 
 #contact {
-    background-color: #D3D3D3;
-    color: #333;
+    background-color: #525252;
+    color: white;
 }
 
 /* Smooth scrolling */
