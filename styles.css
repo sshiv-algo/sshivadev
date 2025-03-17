@@ -216,7 +216,7 @@ section h1, section h2 {
     }
 
     .social-links {
-        justify-content: center;
+        justify-content: left;
     }
 
     .contact-right {
