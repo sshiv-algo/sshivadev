@@ -1,256 +1,133 @@
-/* Reset basic styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body styles */
-body {
-    font-family: Lucida console, comic sans MS;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-/* Navigation bar */
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #000000;
-    padding: 15px 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Logo styles */
-nav .logo img {
-    height: 40px;
-    width: auto;
-    margin-left: 20px;
-}
-
-/* Navigation menu */
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-nav ul li a:hover {
-    background-color: #575757;
-}
-
-/* Section styles */
-section {
-    padding: 100px 20px;
-    height: 100vh;
-    scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-section h1, section h2 {
-    margin-bottom: 20px;
-}
-
-/* Home section styles */
-#home h1 {
-    font-size: 3rem;
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Section-specific backgrounds */
-#home {
-    background-color: #0A0A0A;
-    color: white;
-}
-
-#about {
-    background-color: #171717;
-    color: white;
-}
-
-#experience {
-    background-color: #262626;
-    color: white;
-}
-
-#skills {
-    background-color: #373737;
-    color: white;
-}
-
 /* Contact Section */
 #contacts {
   height: 60vh;
   width: 100%;
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  padding: 5% 10%;
+  background-color: #262626;
 }
-
 
 .inputs {
   height: 100%;
-  width: 50%;
-  margin-left: 3%;
-  margin-top: 5%;
+  width: 48%; /* Adjusting width to make space for social links */
 }
 
 .social {
   height: 100%;
-  width: 50%;
-  margin-top: 100%;
+  width: 48%; /* Adjusting width to balance the form */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.contact-input{
+
+.contact-input {
   display: block;
   height: 40px;
-  width: 350px;
-  margin: 5%;
+  width: 100%; /* Full width to fit form container */
+  margin-bottom: 15px;
   padding-left: 10px;
   font-size: 1.1em;
   background-color: rgba(235, 9, 9, 0.247);
-
+  border: none;
+  border-radius: 5px;
 }
-.contact-header{
+
+.contact-header {
   font-size: 1.4em;
   position: relative;
   top: 5px;
   left: 25px;
-  display:block;
+  margin-bottom: 20px;
+  color: white;
 }
-.inputs textarea{
+
+.inputs textarea {
   height: 140px;
-  display: block;
+  width: 100%; /* Full width for consistency */
+  margin-bottom: 15px;
+  padding-left: 10px;
+  font-size: 1.1em;
+  background-color: rgba(235, 9, 9, 0.247);
+  border: none;
+  border-radius: 5px;
 }
-.inputs button{
+
+.inputs button {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 40px;
-  width: 120px;
+  width: 100%; /* Full width for consistency */
   outline: 0;
   background-color: rgba(235, 9, 9, 0.247);
   border: 0;
-  margin-left: 4.5%;
   border-radius: 6px;
   font-size: 1.1em;
   cursor: pointer;
-  display: block;
+  margin-top: 10px;
 }
-.inputs button:hover{
-  width: 305px;
-  margin-left: 2.5%;
+
+.inputs button:hover {
   background-color: rgba(235, 9, 9, 0.363);
+}
 
-}
-.social{
-  margin-top: -30%;
-}
 .social-header {
-  position:relative;
-  left: 0%;
-  bottom: 520px;
   font-size: 1.2em;
-  margin-top: 0px;
+  color: white;
+  margin-bottom: 20px;
   text-align: center;
-
 }
+
 .social-outer-header {
   opacity: 0.2;
-  margin-left: 0px;
-  width: 100vw;
+  width: 100%;
 }
 
 .social-inner-header {
   color: rgb(228, 12, 12);
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: 600;
-  position: relative;
-  bottom: 30px;
-  left: 105px;
-
+  margin-bottom: 20px;
 }
 
-.social a{
+.social a {
   display: block;
   height: 50px;
   width: 50px;
-  margin-left: -130px;
-  margin-top: 120px;
-  font-size: 0.4em;
+  margin-top: 15px;
+  font-size: 1.5em;
   text-align: center;
   padding-top: 8px;
+  color: white;
+  background-color: rgba(228, 12, 12, 0.2);
+  border-radius: 50%;
+  text-decoration: none;
 }
 
-/* Smooth scrolling */
-html {
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    height: 100%;
-    overflow-y: scroll;
-}
-
-/* Custom scrollbar styles */
-::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: #2a2a2a;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #444;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #666;
+.social a:hover {
+  background-color: rgba(228, 12, 12, 0.5);
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        margin-top: 60px;
-    }
+  #contacts {
+    flex-direction: column;
+    height: auto; /* Adjust height for mobile */
+    padding: 5%;
+  }
 
-    nav ul li {
-        margin: 10px 0;
-    }
+  .inputs, .social {
+    width: 100%;
+    margin-bottom: 30px;
+  }
 
-    section {
-        padding: 80px 10px;
-    }
+  .inputs button {
+    width: 100%;
+  }
 
-    .social-links {
-        flex-direction: column;
-        gap: 15px;
-    }
+  .social a {
+    font-size: 1.2em; /* Increase icon size on mobile */
+  }
 }
