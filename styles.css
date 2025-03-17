@@ -64,6 +64,16 @@ section h1, section h2 {
     margin-bottom: 20px;
 }
 
+/* Home section styles (changed h1 size and font) */
+#home h1 {
+    font-size: 3rem;  /* Adjust the size of the text */
+    font-family: 'Arial', sans-serif;  /* Set the font family */
+    font-weight: bold;  /* Make the text bold */
+    color: #fff;  /* Color for dark background */
+    text-align: center;  /* Center-align the text */
+    margin-bottom: 20px;  /* Add space below the heading */
+}
+
 /* Section-specific backgrounds */
 #home {
     background-color: #0A0A0A;
@@ -98,6 +108,25 @@ html {
     overflow-y: scroll;
 }
 
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+    width: 10px;  /* Vertical scrollbar width */
+    height: 10px;  /* Horizontal scrollbar height */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #2a2a2a;  /* Dark track to blend with theme */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #444;  /* Dark gray thumb */
+    border-radius: 5px;  /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #666;  /* Lighter gray on hover */
+}
+
 /* Styling for mobile responsiveness */
 @media (max-width: 768px) {
     nav ul {
@@ -113,3 +142,4 @@ html {
         padding: 80px 10px;
     }
 }
+
