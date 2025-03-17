@@ -66,8 +66,8 @@ section h1, section h2 {
 
 /* Section-specific backgrounds */
 #home {
-    background-color: #87CEEB;
-    color: #333;
+    background-color: #0A0A0A;
+    color: white;
 }
 
 #about {
