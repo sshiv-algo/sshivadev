@@ -77,11 +77,6 @@ section h1, section h2 {
 
 /* Home section styles */
 #home h1 {
-    background-image: url('asset/download.jpg');
-  background-size: cover; /* To ensure it covers the entire section */
-  background-position: center; /* To center the image */
-    width: 100vw; /* Full viewport width */
-  height: 100vh
     font-size: 3rem;
     font-family: 'Arial', sans-serif;
     font-weight: bold;
@@ -169,7 +164,6 @@ section h1, section h2 {
 
 .contact-form input,
 .contact-form textarea {
-    height: 140%
     width: 100%;
     padding: 10px;
     border: 2px solid #ccc;
