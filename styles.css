@@ -7,7 +7,7 @@
 
 /* Body styles */
 body {
-    font-family: Lucida console, comic sans MS;
+    font-family: 'Lucida Console', 'Comic Sans MS', sans-serif;
     background-color: #f4f4f4;
     color: #333;
 }
@@ -60,11 +60,26 @@ nav ul li a:hover {
     background-color: #575757;
 }
 
+/* Home section with background image */
+#home {
+    background-image: url('asset/background.jpg'); /* Update with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
 /* Section styles */
 section {
     padding: 100px 20px;
     height: 100vh;
-    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -75,52 +90,21 @@ section h1, section h2 {
     margin-bottom: 20px;
 }
 
-/* Home section styles */
-#home h1 {
-    font-size: 3rem;
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Section-specific backgrounds */
-#home {
-    background-color: #0A0A0A;
-    color: white;
-}
-
-#about {
-    background-color: #171717;
-    color: white;
-}
-
-#experience {
-    background-color: #262626;
-    color: white;
-}
-
-#skills {
-    background-color: #373737;
-    color: white;
-}
-
 /* Contact Section */
 #contact {
     display: flex;
-    justify-content: space-between; /* Ensures left & right alignment */
-    align-items: center; /* Align items vertically */
+    justify-content: space-between;
+    align-items: center;
     padding: 50px;
     background: #565656;
-    min-height: 100vh; /* Adjusts to viewport height */
+    min-height: 100vh;
     width: 100%;
 }
 
 /* Left Side: Social Media Links */
 .contact-left {
-    width: 50%; /* Takes up half the space */
-    text-align: left; /* Aligns content to the left */
+    width: 50%;
+    text-align: left;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -148,8 +132,8 @@ section h1, section h2 {
 
 /* Right Side: Contact Form */
 .contact-right {
-    width: 80%; /* Takes up half the space */
-    text-align: right; /* Ensures form aligns to the right */
+    width: 50%;
+    text-align: right;
     display: flex;
     justify-content: flex-end;
 }
@@ -186,7 +170,7 @@ section h1, section h2 {
     background-color: #0056b3;
 }
 
-/* Email at Bottom */
+/* Email Box */
 .email-box {
     width: 100%;
     text-align: center;
@@ -218,58 +202,5 @@ section h1, section h2 {
     .social-links {
         justify-content: left;
     }
-
-    .contact-right {
-        justify-content: center;
-        margin-top: 20px;
-    }
 }
 
-
-/* Smooth scrolling */
-html {
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    height: 100%;
-    overflow-y: scroll;
-}
-
-/* Custom scrollbar styles */
-::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: #2a2a2a;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #444;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #666;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        margin-top: 60px;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    section {
-        padding: 80px 10px;
-    }
-
-    .social-links {
-        flex-direction: column;
-        gap: 15px;
-    }
-}
