@@ -7,6 +7,9 @@
 
 /* Body styles */
 body {
+    background: url('asset/download.jpg')
+    no-repeat center center fixed;
+    background-size: cover;
     font-family: Lucida console, comic sans MS;
     background-color: #f4f4f4;
     color: #333;
