@@ -77,6 +77,10 @@ section h1, section h2 {
 
 /* Home section styles */
 #home h1 {
+    background-image: url('path/to/your-image.jpg');
+  background-size: cover; /* To ensure it covers the entire section */
+  background-position: center; /* To center the image */
+  height: 100vh;
     font-size: 3rem;
     font-family: 'Arial', sans-serif;
     font-weight: bold;
