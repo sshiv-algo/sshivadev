@@ -9,23 +9,27 @@
 body {
     background: url('asset/homedp2.jpg') no-repeat center center fixed;
     background-size: cover;
-    font-family: Lucida console, comic sans MS;
+    font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
     color: #333;
 }
 
-/* Navigation bar */
 nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #000000;
-    padding: 15px 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  padding: 15px 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+nav.scrolled {
+  background-color: #000000;
 }
 
 /* Logo styles */
@@ -50,7 +54,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: rgb(250, 185, 91, 1);
     text-decoration: none;
     font-size: 18px;
     padding: 5px 10px;
@@ -80,18 +84,102 @@ section h1, section h2 {
 /* Home section styles */
 #home h1 {
     font-size: 3rem;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    color: #fff;
+    color: #000000;     /*name home*/
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Section-specific backgrounds */
+/* === HERO SECTION === */
 #home {
-    background-color: #0A0A0A;
-    color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;   /* Align content to left */
+  padding-left: 2%;         /* Space from left edge */
+  height: 100vh;             /* Full screen height */
+  color:#fab95b;    /*preffesion*/
+  background: url('images/homedp2.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
 }
+
+/* Overlay to darken background for readability */
+#home::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* semi-transparent black overlay */
+  z-index: -1; /* put behind text */
+}
+
+/* Name */
+#home h1 {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Tagline */
+#home h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* Short description */
+#home .home-description {
+  font-size: 1.2rem;
+  max-width: 700px;
+  line-height: 1.5;
+  color: #0a0a0a;
+  text-align: left;
+}
+
+/* === Optional: Responsive font sizes === */
+@media (max-width: 768px) {
+  #home {
+    padding-left: 5%; /* less padding on small screens */
+    align-items: flex-start;
+  }
+
+  #home h1 {
+    font-size: 3rem;
+  }
+
+  #home h2 {
+    font-size: 1.5rem;
+  }
+
+  #home .home-description {
+    font-size: 0.9rem;
+  }
+}
+.contact-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background-color: #f4d35e; /* bright yellow */
+  color: #000; /* black text for contrast */
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none; /* remove underline */
+  transition: background 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #ffd100; /* slightly darker yellow on hover */
+  color: #000;
+}
+
 
 #about {
     background-color: #171717;
@@ -108,85 +196,89 @@ section h1, section h2 {
     color: white;
 }
 
-/* Contact Section */
+/* === Contact Section === */
 #contact {
-    display: flex;
-    justify-content: space-between; /* Ensures left & right alignment */
-    align-items: center; /* Align items vertically */
-    padding: 50px;
-    background: #565656;
-    min-height: 100vh; /* Adjusts to viewport height */
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  background: #fab95b; /* Use your desired background */
+  color: #fff;
 }
 
-/* Left Side: Social Media Links */
-.contact-left {
-    width: 50%; /* Takes up half the space */
-    text-align: left; /* Aligns content to the left */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+/* Wrapper to center the form nicely */
+.contact-form-wrapper {
+  max-width: 600px;
+  width: 100%;
 }
 
-.contact-left h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
+/* Heading */
+.form-heading {
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  text-align: left;
 }
 
-.social-links {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icon {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.social-icon:hover {
-    transform: scale(1.2);
-}
-
-/* Right Side: Contact Form */
-.contact-right {
-    width: 80%; /* Takes up half the space */
-    text-align: right; /* Ensures form aligns to the right */
-    display: flex;
-    justify-content: flex-end;
-}
-
+/* Form container */
 .contact-form {
-    width: 100%;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
+/* Two inputs in a row */
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+/* Inputs & textarea: clean underline style */
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #fff;
+  background: transparent;
+  padding: 10px 5px;
+  font-size: 16px;
+  color: #fff;
+  outline: none;
 }
 
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #fff;
+  opacity: 0.7;
+}
+
+/* Button: rounded, neat */
 .contact-form button {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-    border-radius: 5px;
+  align-self: flex-start;
+  padding: 12px 30px;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .contact-form button:hover {
-    background-color: #0056b3;
+  background-color: #555;
 }
+
+/* Responsive: stack inputs on small screens */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+
 
 /* Email at Bottom */
 .email-box {
