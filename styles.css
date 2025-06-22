@@ -107,7 +107,7 @@ section h1, section h2 {
 }
 
 /* Overlay to darken background for readability */
-#home::before {
+/*#home::before {
   content: "";
   position: absolute;
   top: 0; left: 0;
