@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,11 +21,16 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+<section id="home">
+  <h1>Sivadev Sunil.</h1>
+  <h2>Web Developer | Graphic Designer | Cyber Security</h2>
+  <p class="home-description">
+A developer and Designer who also have strong intrest in Cybersecurity. I focus on building clean, reliable software and continuously learning to stay sharp in a fast-changing field of technology and innovation.
+  </p>
+  <a href="#contact" class="contact-button">Contact Me</a>
+</section>
 
-    <section id="home">
-        <h1>Sivadev sunil.</h1>
-        <p>Web Developer | Graphic Designer | Cyber security</p>
-    </section>
+
 
     <section id="about">
         <h2>About Me</h2>
@@ -41,32 +47,20 @@
         <p>This is the skills section.</p>
     </section>
 
-   <section id="contact">
-    <!-- Left Side: Social Media Links -->
-    <div class="contact-left">
-        <h2>Reach Me On</h2>
-        <div class="social-links">
-            <a href="https://www.instagram.com/your_username" target="_blank">
-                <img src="images/instagram.png" alt="Instagram" class="social-icon">
-            </a>
-            <a href="https://www.linkedin.com/in/your_username" target="_blank">
-                <img src="images/linkedin.png" alt="LinkedIn" class="social-icon">
-            </a>
-            <a href="https://github.com/your_username" target="_blank">
-                <img src="images/github.png" alt="GitHub" class="social-icon">
-            </a>
-        </div>
-    </div>
-
-    <!-- Right Side: Contact Form -->
-    <div class="contact-right">
-        <form class="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
+<section id="contact">
+  <div class="contact-form-wrapper">
+    <h2 class="form-heading">Say Hello</h2>
+    <form class="contact-form" action="https://script.google.com/macros/s/AKfycbxK4yHWglcMacpY5f4I-Jarv_NztbvEE5a_1_qBr915YJUMjUji0MJni4_Wlpc-c2Ngfw/exec" method="POST" id="contactForm">
+      <div class="form-row">
+        <input type="text" name="first_name" placeholder="First name" required>
+        <input type="text" name="full_name" placeholder="Full name" required>
+      </div>
+      <input type="email" name="email" placeholder="Email address" required>
+      <input type="text" name="subject" placeholder="Subject of the message" required>
+      <textarea name="message" rows="5" placeholder="Type your message here.." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
 </section>
 
 <!-- Email Box at Bottom -->
