@@ -10,64 +10,78 @@ section {
   align-items: flex-start; /* left-align by default */
 }
 
-/* === HERO SECTION: #home === */
+/* === HERO SECTION === */
 #home {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;   /* Align content to left */
-  padding-left: 5%;          /* space from left edge */
+  align-items: flex-start;
+  padding: 0 5%;
   min-height: 100vh;
-  width: 100%;
+
+  /* BACKGROUND IMAGE */
   background: url('images/homedp2.jpg') no-repeat center center;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   overflow: hidden;
 }
 
-/* Mobile tweak: adjust background position for small screens */
-@media (max-width: 768px) {
-  #home {
-    background-position: top center;
-    padding-left: 8%;  /* a bit more space on small screens */
-  }
-}
-
-/* Optional overlay (make sure it’s fully transparent if you want no darkening) */
+/* OVERLAY: optional, adjust opacity for readability */
 #home::before {
   content: "";
   position: absolute;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0); /* fully transparent, adjust if you want slight dark */
-  z-index: -1;
+  background: rgba(255, 255, 255, 0); /* fully transparent or slight tint */
+  z-index: 0;
 }
 
-/* === Hero content styling === */
-#home h1 {
-  font-size: 5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #000;
+/* Content: keep text on top of overlay */
+#home h1,
+#home h2,
+#home .home-description,
+#home .contact-button {
+  position: relative;
+  z-index: 1;
   text-align: left;
+}
+
+/* Responsive text sizing */
+#home h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
 }
 
 #home h2 {
   font-size: 1.8rem;
-  font-weight: 400;
   margin-bottom: 15px;
-  color: #fab95b;
-  text-align: left;
 }
 
 #home .home-description {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   max-width: 700px;
   line-height: 1.5;
-  color: #0a0a0a;
-  text-align: left;
+}
+
+@media (max-width: 768px) {
+  #home {
+    align-items: center;
+    text-align: center;
+  }
+
+  #home h1 {
+    font-size: 2.8rem;
+  }
+
+  #home h2 {
+    font-size: 1.4rem;
+  }
+
+  #home .home-description {
+    font-size: 1rem;
+  }
 }
 
 /* Contact button under description */
