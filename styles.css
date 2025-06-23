@@ -321,9 +321,21 @@ section h1, section h2 {
 }
 
 #skills {
-    background-color: #373737;
-    color: white;
+  background: url('images/wallpic1.png') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* optional: makes background stay in place while scrolling */
+  color: #ffffff; /* white text works well on images */
+  padding: 100px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+#skills h2 {
+  color: #FFD700;  /* or any color you like */
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5); /* optional for readability */
+}
+
 
 /* === Contact Section === */
 #contact {
@@ -331,8 +343,8 @@ section h1, section h2 {
   justify-content: center;
   align-items: center;
   padding: 80px 20px;
-  background: #fab95b; /* Use your desired background */
-  color: #fff;
+  background:  #fcd440; /* Use your desired background */
+  color: #262626;
 }
 
 /* Wrapper to center the form nicely */
@@ -370,17 +382,17 @@ section h1, section h2 {
 .contact-form input,
 .contact-form textarea {
   border: none;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #262626;
   background: transparent;
   padding: 10px 5px;
   font-size: 16px;
-  color: #fff;
+  color: #262626;
   outline: none;
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: #fff;
+  color: #262626;
   opacity: 0.7;
 }
 
@@ -388,7 +400,7 @@ section h1, section h2 {
 .contact-form button {
   align-self: flex-start;
   padding: 12px 30px;
-  background-color: #333;
+  background-color: #3333;
   color: #fff;
   font-size: 16px;
   border: none;
@@ -398,7 +410,7 @@ section h1, section h2 {
 }
 
 .contact-form button:hover {
-  background-color: #555;
+  background-color: #262626;
 }
 
 /* Responsive: stack inputs on small screens */
@@ -496,3 +508,52 @@ html {
         gap: 15px;
     }
 }
+/* === Skills Section Grid === */
+#skills {
+  background-color: #222; /* dark background */
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#skills h2 {
+  font-size: 36px;
+  margin-bottom: 50px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent glass */
+  border-radius: 12px;
+  padding: 30px 20px;
+  backdrop-filter: blur(10px); /* frosted blur */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* subtle border */
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.15); /* slight increase on hover */
+}
+
+
+.skill-card img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 5px;
+}
+
+.skill-card h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
