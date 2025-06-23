@@ -1,6 +1,5 @@
 // script.js
-
-// NAV SCROLL COLOR
+// Navigation scroll background
 window.addEventListener('scroll', function() {
   const nav = document.querySelector('nav');
   if (window.scrollY > 50) {
@@ -9,10 +8,12 @@ window.addEventListener('scroll', function() {
     nav.classList.remove('scrolled');
   }
 });
- const form = document.getElementById('contactForm');
+
+//   form handling:
+const form = document.getElementById('contactForm');
 
 form.addEventListener('submit', e => {
-  e.preventDefault();
+  e.preventDefault(); //  Stop default submission!
 
   const formData = new FormData(form);
 
@@ -32,6 +33,4 @@ form.addEventListener('submit', e => {
     alert("Something went wrong!");
     console.error(error);
   });
-});
-
 });
