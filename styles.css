@@ -104,6 +104,29 @@ section h1, section h2 {
   position: relative;
   overflow: hidden;
 }
+/* Social icons fixed to bottom-right corner of HOME only */
+#home {
+  position: relative; /* Required for positioning inside */
+}
+
+.social-icons-home {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: row; /* horizontal like a queue */
+  gap: 15px;
+}
+
+.social-icons-home a img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons-home a img:hover {
+  transform: scale(1.2);
+}
 
 /* Overlay to darken background for readability */
   #home::before {
