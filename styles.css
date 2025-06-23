@@ -1,120 +1,102 @@
-/* Reset basic styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body styles */
-body {
-    background: url('images/homedp2.jpg') no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f4;
-}
-
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: transparent;
-  padding: 15px 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background-color 0.3s ease;
-}
-
-nav.scrolled {
-  background-color: #000000;
-}
-
-/* Logo styles */
-nav .logo img {
-    height: 40px;
-    width: auto;
-    margin-left: 20px;
-}
-
-/* Navigation menu */
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 20px;
-}
-
-nav ul li a {
-    color: rgb(250, 185, 91, 1);
-    text-decoration: none;
-    font-size: 18px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-nav ul li a:hover {
-    background-color: #575757;
-}
-
-/* Section styles */
+/* === GENERAL SECTION === */
 section {
-    padding: 100px 20px;
-    height: 100vh;
-    scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 100px 20px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* left-align by default */
 }
 
-section h1, section h2 {
-    margin-bottom: 20px;
-}
-
-/* Home section styles */
-#home h1 {
-    font-size: 3rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    color: #000000;     /*name home*/
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* === HERO SECTION === */
+/* === HERO SECTION: #home === */
 #home {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;   /* Align content to left */
-  padding-left: 2%;         /* Space from left edge */
-  height: 100vh;             /* Full screen height */
-  color:#fab95b;    /*preffesion*/
+  padding-left: 5%;          /* space from left edge */
+  min-height: 100vh;
+  width: 100%;
   background: url('images/homedp2.jpg') no-repeat center center;
   background-size: cover;
-  position: relative;
+  background-position: center;
   overflow: hidden;
 }
-/* Social icons fixed to bottom-right corner of HOME only */
-#home {
-  position: relative; /* Required for positioning inside */
+
+/* Mobile tweak: adjust background position for small screens */
+@media (max-width: 768px) {
+  #home {
+    background-position: top center;
+    padding-left: 8%;  /* a bit more space on small screens */
+  }
 }
 
+/* Optional overlay (make sure it’s fully transparent if you want no darkening) */
+#home::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0); /* fully transparent, adjust if you want slight dark */
+  z-index: -1;
+}
+
+/* === Hero content styling === */
+#home h1 {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000;
+  text-align: left;
+}
+
+#home h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+  color: #fab95b;
+  text-align: left;
+}
+
+#home .home-description {
+  font-size: 1.2rem;
+  max-width: 700px;
+  line-height: 1.5;
+  color: #0a0a0a;
+  text-align: left;
+}
+
+/* Contact button under description */
+.contact-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background-color: #f4d35e; /* bright yellow */
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #ffd100;
+  color: #000;
+}
+
+/* Social icons at bottom-right */
 .social-icons-home {
   position: absolute;
   bottom: 30px;
   right: 30px;
   display: flex;
-  flex-direction: row; /* horizontal like a queue */
+  flex-direction: row;
   gap: 15px;
 }
 
@@ -128,264 +110,16 @@ section h1, section h2 {
   transform: scale(1.2);
 }
 
-/* Overlay to darken background for readability */
-  #home::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0); /* semi-transparent black overlay */
-  z-index: -1; /* put behind text */
-}
-
-/* Name */
-#home h1 {
-  font-size: 5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-/* Tagline */
-#home h2 {
-  font-size: 1.8rem;
-  font-weight: 400;
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-/* Short description */
-#home .home-description {
-  font-size: 1.2rem;
-  max-width: 700px;
-  line-height: 1.5;
-  color: #0a0a0a;
-  text-align: left;
-}
-
-/* === Optional: Responsive font sizes === */
+/* Mobile responsive font sizes */
 @media (max-width: 768px) {
-  #home {
-    padding-left: 5%; /* less padding on small screens */
-    align-items: flex-start;
-  }
-
   #home h1 {
     font-size: 3rem;
   }
-
   #home h2 {
     font-size: 1.5rem;
   }
-
   #home .home-description {
     font-size: 0.9rem;
   }
 }
-.contact-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 30px;
-  background-color: #f4d35e; /* bright yellow */
-  color: #000; /* black text for contrast */
-  font-weight: 600;
-  font-size: 16px;
-  border: none;
-  border-radius: 30px;
-  text-decoration: none; /* remove underline */
-  transition: background 0.3s ease;
-}
 
-.contact-button:hover {
-  background-color: #ffd100; /* slightly darker yellow on hover */
-  color: #000;
-}
-
-
-#about {
-    background-color: #171717;
-    color: white;
-}
-
-#experience {
-    background-color: #262626;
-    color: white;
-}
-
-#skills {
-    background-color: #373737;
-    color: white;
-}
-
-/* === Contact Section === */
-#contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 80px 20px;
-  background: #fab95b; /* Use your desired background */
-  color: #fff;
-}
-
-/* Wrapper to center the form nicely */
-.contact-form-wrapper {
-  max-width: 600px;
-  width: 100%;
-}
-
-/* Heading */
-.form-heading {
-  font-size: 32px;
-  margin-bottom: 30px;
-  font-weight: 600;
-  text-align: left;
-}
-
-/* Form container */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* Two inputs in a row */
-.form-row {
-  display: flex;
-  gap: 20px;
-}
-
-.form-row input {
-  flex: 1;
-}
-
-/* Inputs & textarea: clean underline style */
-.contact-form input,
-.contact-form textarea {
-  border: none;
-  border-bottom: 2px solid #fff;
-  background: transparent;
-  padding: 10px 5px;
-  font-size: 16px;
-  color: #fff;
-  outline: none;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: #fff;
-  opacity: 0.7;
-}
-
-/* Button: rounded, neat */
-.contact-form button {
-  align-self: flex-start;
-  padding: 12px 30px;
-  background-color: #333;
-  color: #fff;
-  font-size: 16px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.contact-form button:hover {
-  background-color: #555;
-}
-
-/* Responsive: stack inputs on small screens */
-@media (max-width: 768px) {
-  .form-row {
-    flex-direction: column;
-  }
-}
-
-
-/* Email at Bottom */
-.email-box {
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 20px 0;
-    background: #444;
-}
-
-.email-box a {
-    text-decoration: none;
-    color: white;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    #contact {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
-
-    .contact-left, .contact-right {
-        width: 100%;
-        text-align: center;
-        justify-content: center;
-    }
-
-    .social-links {
-        justify-content: left;
-    }
-
-    .contact-right {
-        justify-content: center;
-        margin-top: 20px;
-    }
-}
-
-
-/* Smooth scrolling */
-html {
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    height: 100%;
-    overflow-y: scroll;
-}
-
-/* Custom scrollbar styles */
-::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: #2a2a2a;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #444;
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #666;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        margin-top: 60px;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    section {
-        padding: 80px 10px;
-    }
-
-    .social-links {
-        flex-direction: column;
-        gap: 15px;
-    }
-}
