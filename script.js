@@ -10,26 +10,23 @@ window.addEventListener('scroll', function() {
   }
 });
 
-// FORM SUBMIT HANDLER
 const form = document.getElementById('contactForm');
 
 form.addEventListener('submit', e => {
   e.preventDefault();
 
-  //  Use FormData — not JSON
   const formData = new FormData(form);
 
   fetch(form.action, {
     method: 'POST',
     body: formData
-    // No need for headers here — FormData handles it
   })
   .then(response => {
     if (response.ok) {
       alert("Message sent successfully!");
       form.reset();
     } else {
-      throw new Error('Network response was not ok');
+      throw new Error('Form failed');
     }
   })
   .catch(error => {
