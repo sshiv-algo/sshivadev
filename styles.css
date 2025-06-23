@@ -1,13 +1,68 @@
-/* === GENERAL SECTION === */
-section {
-  min-height: 100vh;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* === NAVIGATION BAR === */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 100px 20px;
-  scroll-snap-align: start;
+  background: transparent;
+  padding: 15px 0;
+  z-index: 1000;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start; /* left-align by default */
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+nav.scrolled {
+  background-color: #000;
+}
+
+nav .logo img {
+  height: 40px;
+  width: auto;
+  margin-left: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: rgb(250, 185, 91);
+  text-decoration: none;
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+  background: #575757;
 }
 
 /* === HERO SECTION === */
@@ -17,28 +72,24 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 0 5%;
   min-height: 100vh;
+  padding: 0 5%;
 
-  /* BACKGROUND IMAGE */
   background: url('images/homedp2.jpg') no-repeat center center;
   background-size: cover;
-  background-position: center center;
   overflow: hidden;
 }
 
-/* OVERLAY: optional, adjust opacity for readability */
 #home::before {
   content: "";
   position: absolute;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0); /* fully transparent or slight tint */
+  background: rgba(255, 255, 255, 0); /* fully transparent, or adjust for readability */
   z-index: 0;
 }
 
-/* Content: keep text on top of overlay */
 #home h1,
 #home h2,
 #home .home-description,
@@ -48,24 +99,203 @@ section {
   text-align: left;
 }
 
-/* Responsive text sizing */
 #home h1 {
   font-size: 4rem;
+  font-weight: bold;
   margin-bottom: 20px;
+  color: #000;
 }
 
 #home h2 {
   font-size: 1.8rem;
   margin-bottom: 15px;
+  color: #fab95b;
 }
 
 #home .home-description {
   font-size: 1.1rem;
   max-width: 700px;
   line-height: 1.5;
+  color: #0a0a0a;
 }
 
+.contact-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #f4d35e;
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.contact-button:hover {
+  background: #ffd100;
+  color: #000;
+}
+
+/* Social icons on hero */
+.social-icons-home {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons-home a img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons-home a img:hover {
+  transform: scale(1.2);
+}
+
+/* === SECTIONS === */
+section {
+  padding: 100px 20px;
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#about {
+  background: #171717;
+  color: #fff;
+}
+
+#experience {
+  background: #262626;
+  color: #fff;
+}
+
+#skills {
+  background: #373737;
+  color: #fff;
+}
+
+#contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  background: #fab95b;
+  color: #fff;
+}
+
+.contact-form-wrapper {
+  max-width: 600px;
+  width: 100%;
+}
+
+.form-heading {
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: none;
+  border-bottom: 2px solid #fff;
+  background: transparent;
+  padding: 10px 5px;
+  font-size: 16px;
+  color: #fff;
+  outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #fff;
+  opacity: 0.7;
+}
+
+.contact-form button {
+  align-self: flex-start;
+  padding: 12px 30px;
+  background: #333;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #555;
+}
+
+/* === EMAIL BOX === */
+.email-box {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px 0;
+  background: #444;
+}
+
+.email-box a {
+  text-decoration: none;
+  color: white;
+}
+
+/* === CUSTOM SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2a2a2a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    margin-top: 60px;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
   #home {
     align-items: center;
     text-align: center;
@@ -82,58 +312,9 @@ section {
   #home .home-description {
     font-size: 1rem;
   }
-}
 
-/* Contact button under description */
-.contact-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 30px;
-  background-color: #f4d35e; /* bright yellow */
-  color: #000;
-  font-weight: 600;
-  font-size: 16px;
-  border: none;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.contact-button:hover {
-  background-color: #ffd100;
-  color: #000;
-}
-
-/* Social icons at bottom-right */
-.social-icons-home {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-}
-
-.social-icons-home a img {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s ease;
-}
-
-.social-icons-home a img:hover {
-  transform: scale(1.2);
-}
-
-/* Mobile responsive font sizes */
-@media (max-width: 768px) {
-  #home h1 {
-    font-size: 3rem;
-  }
-  #home h2 {
-    font-size: 1.5rem;
-  }
-  #home .home-description {
-    font-size: 0.9rem;
+  .form-row {
+    flex-direction: column;
   }
 }
 
