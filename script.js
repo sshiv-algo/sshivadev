@@ -1,4 +1,6 @@
 // script.js
+
+// NAV SCROLL COLOR
 window.addEventListener('scroll', function() {
   const nav = document.querySelector('nav');
   if (window.scrollY > 50) {
@@ -6,32 +8,32 @@ window.addEventListener('scroll', function() {
   } else {
     nav.classList.remove('scrolled');
   }
-  const form = document.getElementById('contactForm');
+});
+
+// FORM SUBMIT HANDLER
+const form = document.getElementById('contactForm');
 
 form.addEventListener('submit', e => {
   e.preventDefault();
+
+  //  Use FormData — not JSON
+  const formData = new FormData(form);
+
   fetch(form.action, {
     method: 'POST',
-    body: JSON.stringify({
-      first_name: form.first_name.value,
-      full_name: form.full_name.value,
-      email: form.email.value,
-      subject: form.subject.value,
-      message: form.message.value
-    }),
-    headers: {
-      'Content-Type': 'application/json'
-    }
+    body: formData
+    // No need for headers here — FormData handles it
   })
-  .then(response => response.json())
-  .then(data => {
-    alert("Message sent successfully!");
-    form.reset();
+  .then(response => {
+    if (response.ok) {
+      alert("Message sent successfully!");
+      form.reset();
+    } else {
+      throw new Error('Network response was not ok');
+    }
   })
   .catch(error => {
     alert("Something went wrong!");
     console.error(error);
   });
-});
-
 });
