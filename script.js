@@ -9,8 +9,7 @@ window.addEventListener('scroll', function() {
     nav.classList.remove('scrolled');
   }
 });
-
-const form = document.getElementById('contactForm');
+ const form = document.getElementById('contactForm');
 
 form.addEventListener('submit', e => {
   e.preventDefault();
@@ -33,4 +32,6 @@ form.addEventListener('submit', e => {
     alert("Something went wrong!");
     console.error(error);
   });
+});
+
 });
