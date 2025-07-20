@@ -557,3 +557,82 @@ html {
   margin: 0;
 }
 
+/* Terminal Styles */
+.terminal-popup {
+  display: none;
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #00ff00;
+  font-family: monospace;
+  border: 1px solid #333;
+  z-index: 9999;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+.terminal-header {
+  background: #111;
+  color: #00ff00;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  cursor: pointer;
+  color: red;
+}
+
+.terminal-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-line {
+  margin: 4px 0;
+  white-space: pre-wrap;
+  color: #00ff00;
+}
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  color: #00ff00;
+}
+
+.prompt {
+  color: #00ff00; /* green prompt */
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+#terminal-input {
+  background: transparent;
+  border: none;
+  color: #ffffff; /* white input */
+  font-family: 'Courier New', monospace;
+  flex: 1;
+  outline: none;
+}
+
+#open-terminal img {
+  transition: transform 0.2s ease;
+}
+
+#open-terminal:hover img {
+  transform: scale(1.1);
+}
+
+
