@@ -27,6 +27,38 @@ nav {
   transition: background-color 0.3s ease;
 }
 
+
+
+.project {
+  margin-bottom: 10px;
+}
+
+.project-title {
+  width: 100%;
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 18px;
+  background: #f3f3f3;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.project-title:hover {
+  background: #e5e5e5;
+}
+
+.project-content {
+  display: none;
+  padding: 12px 16px;
+  background: #ffffff;
+  border-left: 3px solid #2563eb;
+  border-radius: 0 0 6px 6px;
+  margin-top: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
 nav.scrolled {
   background-color: #000000;
 }
